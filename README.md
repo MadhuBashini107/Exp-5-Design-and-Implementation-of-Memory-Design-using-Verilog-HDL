@@ -22,7 +22,7 @@ Capture screenshots of the waveform and save the simulation logs. These will be 
 # Code
 # RAM
 // Verilog code
-```
+``` verilog
 `timescale 1ns / 1ps
 module ram_4kb (clk,we,addr,din,dout);
     input clk;
@@ -41,8 +41,9 @@ begin
         dout <= mem[addr];         // Read operation
 end
 endmodule
-
+```
 // Test bench
+```verilog
 module tb_ram_4kb;
 reg clk;
 reg we;
@@ -76,10 +77,13 @@ end
 endmodule
 ```
 // output Waveform
+
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/a2607a44-93c0-4eb5-9f7a-0164377ad367" />
 
 # ROM
  // write verilog code for ROM using $random
+ ```verilog
  `timescale 1ns / 1ps
 module rom_memory (
     input wire clk,
@@ -98,8 +102,9 @@ module rom_memory (
         data_out <= rom[address];
     end
 endmodule
-
+```
  // Test bench
+ ```verilog
 module rom_memory_tb;
 
     
@@ -137,13 +142,15 @@ module rom_memory_tb;
     end
 
 endmodule
-
+```
 // output Waveform
+
+
 <img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/63a03a35-3009-43ea-adfa-70b24d7dcef0" />
 
  # FIFO
  // write verilog code for FIFO
-
+```verilog
  `timescale 1ns / 1ps
   module fifosync_exp (clk,rst,wr_en,rd_en,data_in,full,data_out,empty,count);
     input clk;
@@ -195,10 +202,11 @@ endcase
         end
     end
 endmodule
+```
 
  // Test bench
- 
-    module fifosync_exp_tb;
+ ```verilog
+ module fifosync_exp_tb;
     reg clk;
     reg rst;
     reg wr_en;
@@ -247,9 +255,10 @@ endmodule
 // output Waveform
 
 
-<img width="1290" height="158" alt="image" src="https://github.com/user-attachments/assets/ee9a69ae-72ca-4f63-8ca4-65918b3257c0" />
+<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/4e8c0bfa-3885-4575-82df-7be818400b91" />
 
-```
+
+
 # Conclusion
 The RAM, ROM, FIFO memory with read and write operations was designed and successfully simulated using Verilog HDL. The testbench verified both the write and read functionalities by simulating the memory operations and observing the output waveforms. The experiment demonstrates how to implement memory operations in Verilog, effectively modeling both the reading and writing processes.
  
